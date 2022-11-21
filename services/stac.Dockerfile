@@ -4,11 +4,9 @@ FROM ghcr.io/vincentsarago/uvicorn-gunicorn:${PYTHON_VERSION}
 
 ENV CURL_CA_BUNDLE /etc/ssl/certs/ca-certificates.crt
 
-RUN pip install psycopg[binary,pool]
+COPY stac /tmp/stac
+RUN pip install /tmp/stac
+RUN rm -rf /tmp/stac
 
-COPY services/raster /tmp/raster
-RUN pip install /tmp/raster
-RUN rm -rf /tmp/raster
-
-ENV MODULE_NAME test.raster.api
+ENV MODULE_NAME test.stac.api
 ENV VARIABLE_NAME app

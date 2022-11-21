@@ -4,7 +4,7 @@ services:
   stac:
     container_name: test.stac
     build:
-      context: .
+      context: ./services
       dockerfile: stac.Dockerfile
     ports:
       - "8081:8081"
@@ -46,7 +46,7 @@ services:
     # so we force the image to be built with linux/amd64
     platform: linux/amd64
     build:
-      context: .
+      context: ./services
       dockerfile: raster.Dockerfile
     ports:
       - "8082:8082"

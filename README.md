@@ -7,7 +7,7 @@ A custom version of [stac-fastapi](https://github.com/stac-utils/stac-fastapi), 
 
 ### Raster -> [/services/raster](/services/raster)
 
-The dynamic tiler deployed within eoAPI is built on top of [titiler-pgstac](https://github.com/stac-utils/titiler-pgstac) and [pgstac](https://github.com/stac-utils/pgstac). It enables large scale mosaic based on results of STAC searches queries:
+The dynamic tiler deployed is built on top of [titiler-pgstac](https://github.com/stac-utils/titiler-pgstac) and [pgstac](https://github.com/stac-utils/pgstac). It enables large scale mosaic based on results of STAC searches queries:
 
 - Full **titiler-pgstac** implementation
 - base64 encoded STAC item support for `STAC` **Proxy**
