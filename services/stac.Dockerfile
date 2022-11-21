@@ -8,5 +8,5 @@ COPY stac /tmp/stac
 RUN pip install /tmp/stac
 RUN rm -rf /tmp/stac
 
-ENV MODULE_NAME test.stac.api
+ENV MODULE_NAME api.src.app
 ENV VARIABLE_NAME app

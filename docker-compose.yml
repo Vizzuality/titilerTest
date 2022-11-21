@@ -127,17 +127,17 @@ services:
       - database
 
   test-notebooks:
-      build:
-        context: ./demo/notebooks
-        dockerfile: Dockerfile
-      env_file:
-        - .env
-      volumes:
-        - ./demo/data:/home/mambauser/data
-        - ./demo/notebooks:/home/mambauser/notebooks
-      ports:
-        - 8887:8888
-      container_name: landgriffon_test_jupyter_notebook
+    container_name: test_demo_notebooks
+    build:
+      context: ./demo/notebooks
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    volumes:
+      - ./demo/seed:/home/mambauser/data
+      - ./demo/notebooks:/home/mambauser/notebooks
+    ports:
+      - 8887:8888
 
 volumes:
   pg_db:

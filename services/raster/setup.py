@@ -21,7 +21,7 @@ extra_reqs = {
 
 
 setup(
-    name="raster-tiler",
+    name="test.raster.api",
     description="",
     python_requires=">=3.7",
     packages=find_namespace_packages(exclude=["tests*"]),

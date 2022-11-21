@@ -10,5 +10,5 @@ COPY raster /tmp/raster
 RUN pip install /tmp/raster
 RUN rm -rf /tmp/raster
 
-ENV MODULE_NAME test.raster.api
+ENV MODULE_NAME api.src.app
 ENV VARIABLE_NAME app

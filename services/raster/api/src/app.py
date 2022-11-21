@@ -13,9 +13,9 @@ from titiler.pgstac.db import close_db_connection, connect_to_db
 from titiler.pgstac.dependencies import ItemPathParams
 from titiler.pgstac.reader import PgSTACReader
 
-from eoapi.raster.config import ApiSettings
-from eoapi.raster.factory import MosaicTilerFactory, MultiBaseTilerFactory
-from eoapi.raster.version import __version__ as eoapi_raster_version
+from api.src.config import ApiSettings
+from api.src.factory import MosaicTilerFactory, MultiBaseTilerFactory
+from api.src.version import __version__ as eoapi_raster_version
 
 logging.getLogger("botocore.credentials").disabled = True
 logging.getLogger("botocore.utils").disabled = True

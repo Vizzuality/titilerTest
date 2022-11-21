@@ -12,11 +12,11 @@ from starlette.responses import HTMLResponse
 from starlette.templating import Jinja2Templates
 from starlette_cramjam.middleware import CompressionMiddleware
 
-from eoapi.stac.config import ApiSettings, TilesApiSettings
-from eoapi.stac.config import extensions as PgStacExtensions
-from eoapi.stac.config import get_request_model as GETModel
-from eoapi.stac.config import post_request_model as POSTModel
-from eoapi.stac.extension import TiTilerExtension
+from api.src.config import ApiSettings, TilesApiSettings
+from api.src.config import extensions as PgStacExtensions
+from api.src.config import get_request_model as GETModel
+from api.src.config import post_request_model as POSTModel
+from api.src.extension import TiTilerExtension
 
 try:
     from importlib.resources import files as resources_files  # type: ignore

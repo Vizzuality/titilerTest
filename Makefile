@@ -1,14 +1,14 @@
 up:
-	docker-compose --build up stac raster
+	docker-compose up --build database stac raster
 
 down:
 	docker-compose down
 
 seed:
-	docker-compose --build up pypgstac
+	docker-compose  up --build pypgstac
 
 notebooks:
-	docker-compose --build up test-notebooks
+	docker-compose up --build test-notebooks
 
 deploy:
 	@echo "Deploying command not implemented"

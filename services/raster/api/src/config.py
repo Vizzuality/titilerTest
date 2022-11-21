@@ -8,7 +8,7 @@ import pydantic
 class _ApiSettings(pydantic.BaseSettings):
     """API settings"""
 
-    name: str = "eoAPI-raster"
+    name: str = "api-raster"
     cors_origins: str = "*"
     cachecontrol: str = "public, max-age=3600"
     debug: bool = False
