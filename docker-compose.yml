@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   stac:
-    container_name: test.stac
+    container_name: test.api.stac
     build:
       context: ./services
       dockerfile: stac.Dockerfile
@@ -41,7 +41,7 @@ services:
       - ./scripts:/tmp/scripts
 
   raster:
-    container_name: eoapi.raster
+    container_name: test.api.raster
     # At the time of writing, rasterio and psycopg wheels are not available for arm64 arch
     # so we force the image to be built with linux/amd64
     platform: linux/amd64
@@ -95,7 +95,7 @@ services:
       - ./scripts:/tmp/scripts
 
   database:
-    container_name: eoapi.db
+    container_name: test.api.db
     platform: linux/amd64
     image: ghcr.io/stac-utils/pgstac:v0.4.5
     environment:
@@ -110,12 +110,11 @@ services:
       - "5439:5432"
     command: postgres -N 500
     volumes:
-      - ./.pgdata:/var/lib/postgresql/data
-  
+      - pg_db:/var/lib/postgresql/data
   pypgstac:
     container_name: eo-ingest
     build:
-      context: ./demo
+      context: ./demo/seed
       dockerfile: Dockerfile
     environment:
       - PGHOST=database
@@ -123,16 +122,25 @@ services:
       - PGDATABASE=postgis
       - PGUSER=username
       - PGPASSWORD=password
-    command: bash -c "
-        pypgstac load collections ./facebook/facebook_collection.json 
-        --dsn postgresql://$PGUSER:$PGPASSWORD@$PGHOST:$PGPORT/$PGDATABASE
-        --method insert && 
-        pypgstac load items ./facebook/facebook_items.json 
-        --dsn postgresql://$PGUSER:$PGPASSWORD@$PGHOST:$PGPORT/$PGDATABASE 
-        --method insert"
+    command: bash -c "bash /opt/src/ingest.sh"
     depends_on:
       - database
 
+  test-notebooks:
+      build:
+        context: ./demo/notebooks
+        dockerfile: Dockerfile
+      env_file:
+        - .env
+      volumes:
+        - ./demo/data:/home/mambauser/data
+        - ./demo/notebooks:/home/mambauser/notebooks
+      ports:
+        - 8887:8888
+      container_name: landgriffon_test_jupyter_notebook
+
+volumes:
+  pg_db:
 networks:
   default:
-    name: eoapi-network
+    name: test-api-network

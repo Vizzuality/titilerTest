@@ -1,6 +1,15 @@
-## titilerTest
+# titilerTest
 
+This is a demo using titiler with a stac catalog api
+## Project structure
 
+```
+ ├──demo/                  - items/collections and notebook
+ ├──infrastructure/        - terraform infrastructure setup
+ └──services/
+    ├── raster/            - API raster Application package
+    └── stac/              - API stac Application package
+```
 ### STAC -> [/services/stac](/services/stac)
 
 A custom version of [stac-fastapi](https://github.com/stac-utils/stac-fastapi), adding a `TiTilerExtension` and a simple `Search Viewer`.
@@ -17,7 +26,7 @@ The dynamic tiler deployed is built on top of [titiler-pgstac](https://github.co
   <p align="center">TiTiler-PgSTAC workflow</p>
 </p>
 
-## Local
+## Local development
 
 You can launch the APIs locally using docker. This will start 3 services: database, api.stac, api.raster
 
@@ -28,14 +37,4 @@ make up
 ``` bash
 docker-compose build
 docker-compose up stac raster
-```
-
-## Project structure
-
-```
- ├──demo/                  - items/collections and notebook
- infrastructure/           - terraform infrastructure setup
- └──services/
-    ├── raster/            - API raster Application package
-    └── stac/              - API stac Application package
 ```
