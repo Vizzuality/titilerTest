@@ -1,11 +1,11 @@
 ## titilerTest
 
 
-### STAC -> [/src/eoapi/stac](/services/stac)
+### STAC -> [/services/stac](/services/stac)
 
 A custom version of [stac-fastapi](https://github.com/stac-utils/stac-fastapi), adding a `TiTilerExtension` and a simple `Search Viewer`.
 
-### Raster -> [/src/eoapi/raster](/services/raster)
+### Raster -> [/services/raster](/services/raster)
 
 The dynamic tiler deployed within eoAPI is built on top of [titiler-pgstac](https://github.com/stac-utils/titiler-pgstac) and [pgstac](https://github.com/stac-utils/pgstac). It enables large scale mosaic based on results of STAC searches queries:
 
