@@ -1,0 +1,4 @@
+include api/stac/templates/*.html
+
+recursive-exclude tests *
+

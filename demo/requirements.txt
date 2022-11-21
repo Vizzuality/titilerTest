@@ -1,0 +1,2 @@
+pypgstac==0.6.10
+pypgstac[psycopg]==0.6.10
