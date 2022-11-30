@@ -20,7 +20,7 @@ from stac_fastapi.pgstac.types.search import PgstacSearch
 class _ApiSettings(pydantic.BaseSettings):
     """API settings"""
 
-    name: str = "eoAPI-stac"
+    name: str = "API-stac"
     cors_origins: str = "*"
     cachecontrol: str = "public, max-age=3600"
     debug: bool = False
