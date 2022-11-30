@@ -94,6 +94,19 @@ services:
     volumes:
       - ./scripts:/tmp/scripts
 
+  cog-tiler:
+    container_name: cog_tiler
+    build:
+      context: ./services
+      dockerfile: cog.Dockerfile
+    environment:
+      # Application
+      - HOST=0.0.0.0
+      - PORT=8081
+    ports:
+      - "8083:8081"
+
+
   database:
     container_name: test.api.db
     platform: linux/amd64

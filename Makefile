@@ -1,5 +1,8 @@
 up:
-	docker-compose up --build database stac stac_tiler
+docker-compose up --build database stac stac_tiler
+
+up-cogs:
+	docker-compose up --build cog-tiler
 
 down:
 	docker-compose down
