@@ -99,6 +99,10 @@ services:
     build:
       context: ./services
       dockerfile: cog.Dockerfile
+    environment:
+      # Application
+      - HOST=0.0.0.0
+      - PORT=8081
     ports:
       - "8083:8081"
 
