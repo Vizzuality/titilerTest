@@ -6,9 +6,9 @@ ENV CURL_CA_BUNDLE /etc/ssl/certs/ca-certificates.crt
 
 RUN pip install psycopg[binary,pool]
 
-COPY raster /tmp/raster
-RUN pip install /tmp/raster
-RUN rm -rf /tmp/raster
+COPY stac_tiler /tmp/stac_tiler
+RUN pip install /tmp/stac_tiler
+RUN rm -rf /tmp/stac_tiler
 
 ENV MODULE_NAME api.src.app
 ENV VARIABLE_NAME app

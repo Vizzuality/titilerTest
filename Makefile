@@ -1,5 +1,6 @@
 up:
-	docker-compose up --build database stac raster
+docker-compose up --build database stac stac_tiler
+
 up-cogs:
 	docker-compose up --build cog-tiler
 
