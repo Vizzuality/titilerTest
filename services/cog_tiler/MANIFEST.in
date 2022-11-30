@@ -1,0 +1,4 @@
+include api/src/templates/*.html
+
+recursive-exclude tests *
+

@@ -97,10 +97,10 @@ services:
   cog-tiler:
     container_name: cog_tiler
     build:
-      context: .
+      context: ./services
       dockerfile: cog.Dockerfile
     ports:
-      - "8081:8081"
+      - "8083:8081"
 
 
   database:
