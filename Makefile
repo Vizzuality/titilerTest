@@ -1,5 +1,5 @@
 up:
-	docker-compose up --build database stac raster
+	docker-compose up --build database stac stac_tiler
 
 down:
 	docker-compose down
