@@ -6,7 +6,7 @@ with open("README.md") as f:
     long_description = f.read()
 
 inst_reqs = [
-    "titiler.application==0.7.1",
+    "titiler.application==0.10.2",
 ]
 
 setup(
