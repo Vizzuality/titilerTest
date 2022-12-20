@@ -105,6 +105,8 @@ services:
       - PORT=8081
     ports:
       - "8083:8081"
+    volumes:
+      - ./demo/foodscapes/cog_tiler/cogs:/data
 
 
   database:
